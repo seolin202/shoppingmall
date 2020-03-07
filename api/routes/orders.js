@@ -8,12 +8,27 @@ const router = express.Router();
 //req(require), res(response)
 router.get('/', (req, res) => {
     res.json({
-        msg: "ordersdata get"
+        msg: "orders data get"
     });
 });
 
+router.post('/', (req, res) => {
+    res.json({
+        msg: "orders posting"
+    });
+});
 
+router. patch('/', (req, res) => {
+    res.json({
+        msg: "orders updated"
+    });
+});
 
+router.delete('/', (req, res) => {
+    res.json({
+        msg: "orders deleted"
+    });
+});
 
 //라우터를 모듈화 시켜서 내보낸다
 module.exports = router;
