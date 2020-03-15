@@ -16,9 +16,10 @@ router.post('/', (req, res) => {
         qty : req.body.productqty,
         from : req.body.productfrom
     };
-    
+
     res.json({
         msg: "products posting"
+        productInfo : products
     });
 });
 
