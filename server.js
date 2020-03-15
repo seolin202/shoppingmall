@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require('mongoose');
 // morgan loading
 const morgan = require('morgan');
+// body-parser loading
+const bodyParser = require("body-parser");
 
 
 //server.js 파일에서 라우트를 만들어서 상수화 시켜준다
@@ -24,6 +26,8 @@ app.use('/products', productsRoute);
 app.use('/orders', ordersRoute);
 // dev는 개발자 버젼, 콘솔로그창에 디테일한 표시 
 app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 
 

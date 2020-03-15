@@ -13,6 +13,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
+    const order = {
+        productname : req.body.productname,
+
+    }
+    
     res.json({
         msg: "orders posting"
     });
