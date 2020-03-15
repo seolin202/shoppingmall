@@ -2,7 +2,11 @@
 const express = require('express');
 // express를 실행하는 것을 app 이라고 부르기로 상수화
 const app = express();
+// mongoose loading
 const mongoose = require('mongoose');
+// morgan loading
+const morgan = require('morgan');
+
 
 //server.js 파일에서 라우트를 만들어서 상수화 시켜준다
 //require(경로)를 orderRoute와 productRoute로 상수화 시켜준다
@@ -18,6 +22,8 @@ mongoose.connect(mongoDBurl, {useNewUrlParser: true, useUnifiedTopology: true})
 
 app.use('/products', productsRoute);
 app.use('/orders', ordersRoute);
+// dev는 개발자 버젼, 콘솔로그창에 디테일한 표시 
+app.use(morgan("dev"));
 
 
 
