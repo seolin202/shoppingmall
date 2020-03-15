@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router. patch('/', (req, res) => {
+router.patch('/', (req, res) => {
     res.json({
         msg: "orders updated"
     });
